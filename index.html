@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Your Name</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/textify.min.css">
+    <script type="text/javascript" src="js/dat.gui.min.js"></script>
+</head>
+<body>
+    <!-- インクエフェクト用Canvas -->
+    <canvas id="inkCanvas"></canvas>
+
+    <!-- メインコンテンツ -->
+    <main>
+        <!-- 名前表示 -->
+        <section class="hero-section" style="padding-top: 150px;">
+            <div class="container">
+                <img src="images/profile.jpeg" alt="Profile" class="profile-photo">
+                <p class="hero-nickname">Pam</p>
+                <h1 class="hero-name">Watanabe Yoshikatsu</h1>
+                <div class="hero-social-links">
+                    <a href="https://twitter.com/Shiro3504" target="_blank" class="hero-social-link">
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/pamo0827" target="_blank" class="hero-social-link">
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="https://note.com/fair_aster792" target="_blank" class="hero-social-link" title="Note">
+                        <img src="https://assets.st-note.com/poc-image/manual/note-common-images/production/svg/production.ico" alt="Note" class="icon">
+                    </a>
+                    <a href="https://lapras.com/person" target="_blank" class="hero-social-link" title="LAPRAS">
+                        <img src="https://assets.lapras.com/static/assets/lp/img/favicon.ico" alt="LAPRAS" class="icon">
+                    </a>
+                    <a href="https://www.wantedly.com/id/yoshikatsu_watanabe0" target="_blank" class="hero-social-link" title="Wantedly">
+                        <img src="https://www.google.com/s2/favicons?domain=wantedly.com&sz=128" alt="Wantedly" class="icon">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aboutセクション -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2>About</h2>
+                <div class="info-section">
+                    <h3>所属</h3>
+                    <p class="university-info">筑波大学情報学群情報メディア創成学類３年生</p>
+                </div>
+                
+                <div class="info-section">
+                    <h3>資格</h3>
+                    <p>基本情報技術者 / 応用情報技術者 / AWS Certified Cloud Practitioner</p>
+                </div>
+
+                <div class="info-section">
+                    <h3>研究室</h3>
+                    <p>
+                        ソフトウェアとセキュリティ研究室
+                        <a href="https://www.softlab.cs.tsukuba.ac.jp/" target="_blank" class="external-link-icon" title="研究室のウェブサイトを開く">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11"/>
+                                <path d="M15 3H21V9"/>
+                                <path d="M10 14L21 3"/>
+                            </svg>
+                        </a>
+                    </p>
+                </div>
+
+                <div class="info-section">
+                    <h3>興味分野</h3>
+                    <p>クラウドセキュリティを中心に、AWSなどクラウド基盤上でのセキュアなインフラ構築に興味があります。Web開発においてもバックエンド技術を重視し、安全性と機能性を両立させたアーキテクチャの実現を目指しています。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 実績セクション（時系列） -->
+        <section id="works" class="section">
+            <div class="container">
+                <h2>Works</h2>
+                <div class="timeline">
+
+                    <!-- 実績1 -->
+                    <div class="timeline-item has-link">
+                        <a href="https://www.security-camp.or.jp/minicamp/yamanashi2025.html" target="_blank" class="timeline-link"></a>
+                        <div class="timeline-date">2025年9月</div>
+                        <div class="timeline-content">
+                            <h3>セキュリティ・キャンプミニ2025山梨</h3>
+                            <p>2日間の合宿形式でセキュリティ技術の習得に務めました。</p>
+                            <div class="tags">
+                                <span class="tag">イベント</span>
+                                <span class="tag">セキュリティ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 実績2 -->
+                    <div class="timeline-item has-link">
+                        <a href="https://note.com/fair_aster792/n/n8e8f98e3262f" target="_blank" class="timeline-link"></a>
+                        <div class="timeline-date">2025年8月</div>
+                        <div class="timeline-content">
+                            <h3>セキュリティ・キャンプ全国大会2025</h3>
+                            <p>専門コースBプロダクトセキュリティコースに参加し、5日間の合宿形式でセキュリティ技術の習得に務めました。</p>
+                            <div class="tags">
+                                <span class="tag">イベント</span>
+                                <span class="tag">セキュリティ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 実績3 -->
+                    <div class="timeline-item has-link">
+                        <a href="https://www.smbc-freshers.com/course06/" target="_blank" class="timeline-link"></a>
+                        <div class="timeline-date">2025年8月</div>
+                        <div class="timeline-content">
+                            <h3>三井住友銀行</h3>
+                            <p>3日間のインターンシッププログラムに参加し、デジタル技術を活用した課題解決型ワークに取り組みました。</p>
+                            <div class="tags">
+                                <span class="tag">インターンシップ</span>
+                                <span class="tag">IT戦略策定</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 実績4 -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">2025年8月</div>
+                        <div class="timeline-content">
+                            <h3>TIS</h3>
+                            <p>5日間のインターンシッププログラムに参加し、Androidアプリの開発に取り組みました。</p>
+                            <div class="tags">
+                                <span class="tag">インターンシップ</span>
+                                <span class="tag">アプリ開発</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 実績5 -->
+                    <div class="timeline-item has-link">
+                        <a href="https://www.jsol-recruit.com/jump/" target="_blank" class="timeline-link"></a>
+                        <div class="timeline-date">2025年8月</div>
+                        <div class="timeline-content">
+                            <h3>JSOL</h3>
+                            <p>7日間のインターンシッププログラムに参加し、顧客課題分析から要件定義・システム提案までITコンサルタントの仕事の一連の流れを体験しました。</p>
+                            <div class="tags">
+                                <span class="tag">インターンシップ</span>
+                                <span class="tag">ITコンサル</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 実績5 -->
+                    <div class="timeline-item has-link">
+                        <a href="https://note.com/fair_aster792/n/nc544aac1dcf6" target="_blank" class="timeline-link"></a>
+                        <div class="timeline-date">2025年6月</div>
+                        <div class="timeline-content">
+                            <h3>技育CAMPハッカソン 努力賞受賞</h3>
+                            <p>AI人狼ゲーム「AIdentity」を開発しました。フロントエンド開発に加え、リーダーとして当日発表を担当しました。</p>
+                            <div class="tags">
+                                <span class="tag">イベント</span>
+                                <span class="tag">ゲーム開発</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- アプリケーションセクション -->
+        <section id="apps" class="section">
+            <div class="container">
+                <h2>Apps</h2>
+                <div class="apps-grid">
+                    <!-- App 1: MEMOTTO -->
+                    <div class="app-card app-card-bg" style="background-image: url('images/memotto.png');">
+                        <div class="app-card-overlay">
+                            <div class="app-header">
+                                <div class="app-title-with-logo">
+                                    <img src="images/memotto_favicon.png" alt="MEMOTTO Favicon" class="app-logo">
+                                    <h3 class="app-title">MEMOTTO</h3>
+                                </div>
+                            </div>
+                            <p class="app-description">AIによるシンプルなメモ管理アプリ。レシピサイト、動画、画像など、あらゆるソースから情報を簡単に取り込み、統一されたフォーマットで管理できます。</p>
+                            <div class="app-tech">
+                                <span class="tech-tag">Next.js 15</span>
+                                <span class="tech-tag">React 19</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">Supabase</span>
+                                <span class="tech-tag">Gemini API</span>
+                            </div>
+                            <div class="app-links-group">
+                                <a href="https://github.com/pamo0827/simple-memo-app" target="_blank" class="app-link-button">
+                                    View on GitHub →
+                                </a>
+                                <a href="https://recipe-database-cooki-git-303e59-yoshi0827101328-9306s-projects.vercel.app/" target="_blank" class="app-link-button">
+                                    View Demo →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- App 2: SMIPE -->
+                    <div class="app-card app-card-bg" style="background-image: url('images/smipe-figma.png');">
+                        <div class="app-card-overlay">
+                            <div class="app-header">
+                                <div class="app-title-with-logo">
+                                    <img src="images/SMIPE_logo.png" alt="SMIPE Logo" class="app-logo">
+                                    <h3 class="app-title">SMIPE</h3>
+                                </div>
+                            </div>
+                            <p class="app-description">位置情報と音楽を組み合わせた革新的なソーシャル音楽共有プラットフォーム。Spotify APIと連携し、近くにいる人々と音楽を共有し、新しい音楽の発見を促進します。</p>
+                            <div class="app-tech">
+                                <span class="tech-tag">Ruby on Rails 8</span>
+                                <span class="tech-tag">Ruby 3.3</span>
+                                <span class="tech-tag">Spotify API</span>
+                                <span class="tech-tag">Docker</span>
+                                <span class="tech-tag">Kamal</span>
+                            </div>
+                            <div class="app-links-group">
+                                <a href="https://github.com/GYact/SMIPE" target="_blank" class="app-link-button">
+                                    View on GitHub →
+                                </a>
+                                <a href="https://www.figma.com/proto/wIJTet2xOorIZXV46r8PbT/SMIPE?node-id=5495-271&starting-point-node-id=5495%3A271" target="_blank" class="app-link-button">
+                                    View on Figma →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- App 3: Tetsubou Game -->
+                    <div class="app-card app-card-bg" style="background-image: url('images/tetsubou_game_thumb.png'); background-size: contain; background-repeat: no-repeat; background-position: center; background-color: #87CEEB;">
+                        <div class="app-card-overlay">
+                            <div class="app-header">
+                                <div class="app-title-with-logo">
+                                    <h3 class="app-title">大車輪てつぼうくん</h3>
+                                </div>
+                            </div>
+                            <p class="app-description">タイミングよくボタンを押して鉄棒で加速し、大空へ飛び出そう！物理演算を取り入れた、シンプルながら奥深い飛距離競争ゲームです。</p>
+                            <div class="app-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Pygame</span>
+                                <span class="tech-tag">Pygbag</span>
+                                <span class="tech-tag">GitHub Pages</span>
+                            </div>
+                            <div class="app-links-group">
+                                <a href="https://github.com/pamo0827/tetsubou_game" target="_blank" class="app-link-button">
+                                    View on GitHub →
+                                </a>
+                                <a href="https://pamo0827.github.io/tetsubou_game/" target="_blank" class="app-link-button">
+                                    Play Game →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 記事ハイライトセクション -->
+        <section id="articles" class="section">
+            <div class="container">
+                <h2>Articles</h2>
+                <div class="articles-grid">
+                    <!-- 記事1 -->
+                    <a href="https://note.com/fair_aster792/n/na8397d3f7e8d" target="_blank" class="article-card">
+                        <div class="article-thumbnail">
+                            <img src="https://assets.st-note.com/production/uploads/images/223078902/rectangle_large_type_2_e48b25d5c6ab9a5927585fd5315df872.png" alt="【iOS26対応】ソシャゲに自動でログインしよう">
+                        </div>
+                        <div class="article-content">
+                            <h3 class="article-title">【iOS26対応】ソシャゲに自動でログインしよう</h3>
+                            <div class="article-meta">
+                                <span class="article-date">2025年10月18日</span>
+                                <span class="article-likes">♡ 10</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- 記事2 -->
+                    <a href="https://note.com/fair_aster792/n/n96af1dda80a6" target="_blank" class="article-card">
+                        <div class="article-thumbnail">
+                            <img src="https://assets.st-note.com/production/uploads/images/218726276/rectangle_large_type_2_8b05ac56bc00e838e9e979b244e46980.png" alt="【課題晒し】セキュリティキャンプ2025全国大会">
+                        </div>
+                        <div class="article-content">
+                            <h3 class="article-title">【課題晒し】セキュリティキャンプ2025全国大会</h3>
+                            <div class="article-meta">
+                                <span class="article-date">2025年9月29日</span>
+                                <span class="article-likes">♡ 6</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- 記事3 -->
+                    <a href="https://note.com/fair_aster792/n/n8e8f98e3262f" target="_blank" class="article-card">
+                        <div class="article-thumbnail">
+                            <img src="https://assets.st-note.com/production/uploads/images/208828331/rectangle_large_type_2_6b96dae89399d18a57f6b4d2885e147e.jpeg" alt="【セキュリティキャンプ2025全国大会】人生が変わった５日間">
+                        </div>
+                        <div class="article-content">
+                            <h3 class="article-title">【セキュリティキャンプ2025全国大会】人生が変わった５日間</h3>
+                            <div class="article-meta">
+                                <span class="article-date">2025年8月16日</span>
+                                <span class="article-likes">♡ 10</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- 記事4 -->
+                    <a href="https://note.com/fair_aster792/n/nc544aac1dcf6" target="_blank" class="article-card">
+                        <div class="article-thumbnail">
+                            <img src="https://assets.st-note.com/production/uploads/images/205781818/rectangle_large_type_2_bde0a628022bea91cd972043f3b68c92.png" alt="技育CAMPハッカソン参加レポート：自分の無知に気付かされる２週間">
+                        </div>
+                        <div class="article-content">
+                            <h3 class="article-title">技育CAMPハッカソン参加レポート：自分の無知に気付かされる２週間</h3>
+                            <div class="article-meta">
+                                <span class="article-date">2025年8月1日</span>
+                                <span class="article-likes">♡ 5</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- フッター -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/gsap.min.js"></script>
+    <script src="js/textify.min.js"></script>
+    <script src="js/fluid-simulation.js"></script>
+    <script src="js/fitty.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/textify-init.js"></script>
+    <script src="js/fitty-init.js"></script>
+</body>
+</html>
