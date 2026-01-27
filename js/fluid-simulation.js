@@ -1168,9 +1168,32 @@ function calcDeltaTime () {
     return dt * 0.1;
 }
 
+// モバイルでの初期サイズを記録
+let initialWidth = null;
+let initialHeight = null;
+
 function resizeCanvas () {
     let width = scaleByPixelRatio(canvas.clientWidth);
     let height = scaleByPixelRatio(canvas.clientHeight);
+
+    // 初期サイズを記録
+    if (initialWidth === null) {
+        initialWidth = width;
+        initialHeight = height;
+    }
+
+    // モバイルでは高さの変化を無視（アドレスバーの表示/非表示対策）
+    if (isMobile()) {
+        // 幅が変わった場合のみリサイズ
+        if (canvas.width != width) {
+            canvas.width = width;
+            canvas.height = height;
+            initialHeight = height;
+            return true;
+        }
+        return false;
+    }
+
     if (canvas.width != width || canvas.height != height) {
         canvas.width = width;
         canvas.height = height;
