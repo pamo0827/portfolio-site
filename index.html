@@ -6,7 +6,7 @@
     <title>Portfolio - Your Name</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/textify.min.css">
     <script type="text/javascript" src="js/dat.gui.min.js"></script>
@@ -19,10 +19,9 @@
     <main>
         <!-- 名前表示 -->
         <section class="hero-section" style="padding-top: 150px;">
-            <div class="container">
-                <img src="images/Pam.jpg" alt="Profile" class="profile-photo">
+            <div class="container hero-container-left">
                 <p class="hero-nickname">Pam</p>
-                <h1 class="hero-name">Watanabe Yoshikatsu</h1>
+                <h1 class="hero-name">WATANABE<br>YOSHIKATSU</h1>
                 <div class="hero-social-links">
                     <a href="https://twitter.com/Shiro3504" target="_blank" class="hero-social-link">
                         <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
@@ -88,7 +87,32 @@
                 <h2>Works</h2>
                 <div class="timeline">
 
-                    <!-- 実績1 -->
+                    <!-- 内定 -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">2027年3月（予定）</div>
+                        <div class="timeline-content">
+                            <h3>三井住友銀行 内定</h3>
+                            <p>デジタルIT部門にて就職予定。</p>
+                            <div class="tags">
+                                <span class="tag">就職</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 受託開発 -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">2026年1月</div>
+                        <div class="timeline-content">
+                            <h3>受託開発</h3>
+                            <p>複数のWebサービスに対する広告・掲載情報を一元管理する業務支援アプリケーションにおいて、データベース基盤の移行（Supabase）および関連機能の改修を担当。</p>
+                            <div class="tags">
+                                <span class="tag">受託開発</span>
+                                <span class="tag">Supabase</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- セキュリティ・キャンプミニ -->
                     <div class="timeline-item has-link">
                         <a href="https://www.security-camp.or.jp/minicamp/yamanashi2025.html" target="_blank" class="timeline-link"></a>
                         <div class="timeline-date">2025年9月</div>
@@ -102,7 +126,7 @@
                         </div>
                     </div>
 
-                    <!-- 実績2 -->
+                    <!-- セキュリティ・キャンプ全国大会 -->
                     <div class="timeline-item has-link">
                         <a href="https://note.com/fair_aster792/n/n8e8f98e3262f" target="_blank" class="timeline-link"></a>
                         <div class="timeline-date">2025年8月</div>
@@ -116,48 +140,7 @@
                         </div>
                     </div>
 
-                    <!-- 実績3 -->
-                    <div class="timeline-item has-link">
-                        <a href="https://www.smbc-freshers.com/course06/" target="_blank" class="timeline-link"></a>
-                        <div class="timeline-date">2025年8月</div>
-                        <div class="timeline-content">
-                            <h3>三井住友銀行</h3>
-                            <p>3日間のインターンシッププログラムに参加し、デジタル技術を活用した課題解決型ワークに取り組みました。</p>
-                            <div class="tags">
-                                <span class="tag">インターンシップ</span>
-                                <span class="tag">IT戦略策定</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 実績4 -->
-                    <div class="timeline-item">
-                        <div class="timeline-date">2025年8月</div>
-                        <div class="timeline-content">
-                            <h3>TIS</h3>
-                            <p>5日間のインターンシッププログラムに参加し、Androidアプリの開発に取り組みました。</p>
-                            <div class="tags">
-                                <span class="tag">インターンシップ</span>
-                                <span class="tag">アプリ開発</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 実績5 -->
-                    <div class="timeline-item has-link">
-                        <a href="https://www.jsol-recruit.com/jump/" target="_blank" class="timeline-link"></a>
-                        <div class="timeline-date">2025年8月</div>
-                        <div class="timeline-content">
-                            <h3>JSOL</h3>
-                            <p>7日間のインターンシッププログラムに参加し、顧客課題分析から要件定義・システム提案までITコンサルタントの仕事の一連の流れを体験しました。</p>
-                            <div class="tags">
-                                <span class="tag">インターンシップ</span>
-                                <span class="tag">ITコンサル</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 実績5 -->
+                    <!-- 技育CAMPハッカソン -->
                     <div class="timeline-item has-link">
                         <a href="https://note.com/fair_aster792/n/nc544aac1dcf6" target="_blank" class="timeline-link"></a>
                         <div class="timeline-date">2025年6月</div>
@@ -180,86 +163,48 @@
                 <h2>Apps</h2>
                 <div class="apps-grid">
                     <!-- App 1: MEMOTTO -->
-                    <div class="app-card app-card-bg" style="background-image: url('images/memotto.png');">
-                        <div class="app-card-overlay">
-                            <div class="app-header">
-                                <div class="app-title-with-logo">
-                                    <img src="images/memotto_favicon.png" alt="MEMOTTO Favicon" class="app-logo">
-                                    <h3 class="app-title">MEMOTTO</h3>
-                                </div>
-                            </div>
-                            <p class="app-description">AIによるシンプルなメモ管理アプリ。レシピサイト、動画、画像など、あらゆるソースから情報を簡単に取り込み、統一されたフォーマットで管理できます。</p>
-                            <div class="app-tech">
-                                <span class="tech-tag">Next.js 15</span>
-                                <span class="tech-tag">React 19</span>
+                    <a href="https://github.com/pamo0827/simple-memo-app" target="_blank" class="app-card">
+                        <div class="app-thumbnail">
+                            <img src="images/memotto.png" alt="MEMOTTO">
+                        </div>
+                        <div class="app-content">
+                            <h3 class="app-title">MEMOTTO</h3>
+                            <div class="app-meta">
+                                <span class="tech-tag">Next.js</span>
+                                <span class="tech-tag">React</span>
                                 <span class="tech-tag">TypeScript</span>
-                                <span class="tech-tag">Supabase</span>
-                                <span class="tech-tag">Gemini API</span>
-                            </div>
-                            <div class="app-links-group">
-                                <a href="https://github.com/pamo0827/simple-memo-app" target="_blank" class="app-link-button">
-                                    View on GitHub →
-                                </a>
-                                <a href="https://recipe-database-cooki-git-303e59-yoshi0827101328-9306s-projects.vercel.app/" target="_blank" class="app-link-button">
-                                    View Demo →
-                                </a>
                             </div>
                         </div>
-                    </div>
+                    </a>
 
                     <!-- App 2: SMIPE -->
-                    <div class="app-card app-card-bg" style="background-image: url('images/smipe-figma.png');">
-                        <div class="app-card-overlay">
-                            <div class="app-header">
-                                <div class="app-title-with-logo">
-                                    <img src="images/SMIPE_logo.png" alt="SMIPE Logo" class="app-logo">
-                                    <h3 class="app-title">SMIPE</h3>
-                                </div>
-                            </div>
-                            <p class="app-description">位置情報と音楽を組み合わせた革新的なソーシャル音楽共有プラットフォーム。Spotify APIと連携し、近くにいる人々と音楽を共有し、新しい音楽の発見を促進します。</p>
-                            <div class="app-tech">
-                                <span class="tech-tag">Ruby on Rails 8</span>
-                                <span class="tech-tag">Ruby 3.3</span>
+                    <a href="https://github.com/GYact/SMIPE" target="_blank" class="app-card">
+                        <div class="app-thumbnail">
+                            <img src="images/smipe-figma.png" alt="SMIPE">
+                        </div>
+                        <div class="app-content">
+                            <h3 class="app-title">SMIPE</h3>
+                            <div class="app-meta">
+                                <span class="tech-tag">Rails</span>
                                 <span class="tech-tag">Spotify API</span>
                                 <span class="tech-tag">Docker</span>
-                                <span class="tech-tag">Kamal</span>
-                            </div>
-                            <div class="app-links-group">
-                                <a href="https://github.com/GYact/SMIPE" target="_blank" class="app-link-button">
-                                    View on GitHub →
-                                </a>
-                                <a href="https://www.figma.com/proto/wIJTet2xOorIZXV46r8PbT/SMIPE?node-id=5495-271&starting-point-node-id=5495%3A271" target="_blank" class="app-link-button">
-                                    View on Figma →
-                                </a>
                             </div>
                         </div>
-                    </div>
+                    </a>
 
                     <!-- App 3: Tetsubou Game -->
-                    <div class="app-card app-card-bg" style="background-image: url('images/tetsubou_game_thumb.png'); background-size: contain; background-repeat: no-repeat; background-position: center; background-color: #87CEEB;">
-                        <div class="app-card-overlay">
-                            <div class="app-header">
-                                <div class="app-title-with-logo">
-                                    <h3 class="app-title">大車輪てつぼうくん</h3>
-                                </div>
-                            </div>
-                            <p class="app-description">タイミングよくボタンを押して鉄棒で加速し、大空へ飛び出そう！物理演算を取り入れた、シンプルながら奥深い飛距離競争ゲームです。</p>
-                            <div class="app-tech">
+                    <a href="https://pamo0827.github.io/tetsubou_game/" target="_blank" class="app-card">
+                        <div class="app-thumbnail" style="background-color: #87CEEB;">
+                            <img src="images/tetsubou_game_thumb.png" alt="大車輪てつぼうくん" style="object-fit: contain;">
+                        </div>
+                        <div class="app-content">
+                            <h3 class="app-title">大車輪てつぼうくん</h3>
+                            <div class="app-meta">
                                 <span class="tech-tag">Python</span>
                                 <span class="tech-tag">Pygame</span>
-                                <span class="tech-tag">Pygbag</span>
-                                <span class="tech-tag">GitHub Pages</span>
-                            </div>
-                            <div class="app-links-group">
-                                <a href="https://github.com/pamo0827/tetsubou_game" target="_blank" class="app-link-button">
-                                    View on GitHub →
-                                </a>
-                                <a href="https://pamo0827.github.io/tetsubou_game/" target="_blank" class="app-link-button">
-                                    Play Game →
-                                </a>
                             </div>
                         </div>
-                    </div>
+                    </a>
 
                 </div>
             </div>
@@ -334,7 +279,7 @@
     <!-- フッター -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Your Name. All rights reserved.</p>
+            <p>&copy; 2025 Watanabe Yoshikatsu. All rights reserved.</p>
         </div>
     </footer>
 
