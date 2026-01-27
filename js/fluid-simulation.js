@@ -76,10 +76,14 @@ pointers.push(new pointerPrototype());
 const { gl, ext } = getWebGLContext(canvas);
 
 if (isMobile()) {
-    config.DYE_RESOLUTION = 512;
+    config.DYE_RESOLUTION = 256;
+    config.SIM_RESOLUTION = 16;
+    config.BLOOM = false;
+    config.BLOOM_ITERATIONS = 4;
+    config.PRESSURE_ITERATIONS = 10;
 }
 if (!ext.supportLinearFiltering) {
-    config.DYE_RESOLUTION = 512;
+    config.DYE_RESOLUTION = 256;
     config.SHADING = false;
     config.BLOOM = false;
     config.SUNRAYS = false;
