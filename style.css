@@ -405,8 +405,10 @@ main {
 }
 
 
+/* アプリ名は長さがまちまちなので固定メタ列に入れず、
+   名前を可変幅・技術を右端に寄せて罫線の両端で揃える */
 .apps-list > li {
-    grid-template-columns: var(--col-meta) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) auto;
     align-items: baseline;
     padding-block: var(--space-sm);
 }
@@ -414,12 +416,14 @@ main {
 .app__name {
     font-size: var(--text-md);
     font-weight: 600;
-    white-space: nowrap;
+    overflow-wrap: anywhere;
+    min-width: 0;
 }
 
 .app__tech {
     font-size: var(--text-xs);
     color: var(--color-muted);
+    text-align: end;
 }
 
 .articles-list > li {
@@ -523,6 +527,10 @@ main {
     .articles-list > li {
         grid-template-columns: minmax(0, 1fr);
         gap: var(--space-3xs);
+    }
+
+    .app__tech {
+        text-align: start;
     }
 
     .info-table th {
