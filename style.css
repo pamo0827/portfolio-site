@@ -43,7 +43,6 @@
     --space-xl:  2.5rem;
     --space-2xl: 4rem;
     --space-3xl: 6rem;
-    --space-4xl: 9rem;
 
     /* Motion */
     --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -56,9 +55,10 @@
     --z-sticky: 200;
 
     /* Layout — asymmetric: wide left margin, content biased left */
-    --measure: 56rem;
-    --gutter-start: clamp(1.5rem, 11vw, 12rem);
-    --gutter-end: 1.5rem;
+    --measure: 64rem;
+    --col-meta: 7rem;   /* 全セクション共通のメタ列幅 */
+    --gutter-start: clamp(1.25rem, 11vw, 10rem);
+    --gutter-end: 2rem;
 }
 
 /* Dark — same anchor hue, only lightness and chroma move. */
@@ -227,7 +227,7 @@ main {
    ============================================================ */
 
 .hero {
-    padding-block: var(--space-3xl) var(--space-4xl);
+    padding-block: var(--space-2xl) var(--space-3xl);
 }
 
 .hero__meta {
@@ -259,7 +259,7 @@ main {
     color: var(--color-muted);
     max-width: 48ch;
     line-height: var(--lh-tight);
-    margin-block-end: var(--space-xl);
+    margin-block-end: var(--space-lg);
 }
 
 .hero__links {
@@ -318,12 +318,12 @@ main {
    ============================================================ */
 
 .section {
-    padding-block: var(--space-xl) var(--space-2xl);
+    padding-block: var(--space-lg) var(--space-xl);
 }
 
-.section--works   { padding-block: var(--space-2xl) var(--space-2xl); }
-.section--apps    { padding-block: var(--space-xl) var(--space-xl); }
-.section--articles{ padding-block: var(--space-2xl) var(--space-3xl); }
+.section--works   { padding-block: var(--space-xl) var(--space-xl); }
+.section--apps    { padding-block: var(--space-lg) var(--space-lg); }
+.section--articles{ padding-block: var(--space-xl) var(--space-2xl); }
 
 .section__title {
     display: flex;
@@ -339,7 +339,7 @@ main {
     color: var(--color-muted);
     overflow-wrap: anywhere;
     min-width: 0;
-    margin-block-end: var(--space-lg);
+    margin-block-end: var(--space-md);
 }
 
 /* The one accent mark per section: a 5px tick, well under the 3% budget. */
@@ -374,7 +374,7 @@ main {
     font-size: var(--text-xs);
     font-weight: 400;
     color: var(--color-muted);
-    width: 7rem;
+    width: var(--col-meta);
     white-space: nowrap;
     vertical-align: top;
 }
@@ -405,7 +405,7 @@ main {
 }
 
 .works-list > li {
-    grid-template-columns: 7rem minmax(0, 1fr);
+    grid-template-columns: var(--col-meta) minmax(0, 1fr);
     align-items: start;
     padding-block: var(--space-md);
 }
@@ -432,7 +432,7 @@ main {
 }
 
 .apps-list > li {
-    grid-template-columns: 9rem minmax(0, 1fr);
+    grid-template-columns: var(--col-meta) minmax(0, 1fr);
     align-items: baseline;
     padding-block: var(--space-sm);
 }
@@ -449,7 +449,7 @@ main {
 }
 
 .articles-list > li {
-    grid-template-columns: 8rem minmax(0, 1fr);
+    grid-template-columns: var(--col-meta) minmax(0, 1fr);
     align-items: baseline;
     padding-block: var(--space-sm);
 }
@@ -531,10 +531,12 @@ main {
     :root {
         --gutter-start: 1.25rem;
         --gutter-end: 1.25rem;
+        /* リストは1カラムに畳まれるので、この上書きが効くのは About の表のみ */
+        --col-meta: 5.5rem;
     }
 
     .hero {
-        padding-block: var(--space-2xl) var(--space-3xl);
+        padding-block: var(--space-xl) var(--space-2xl);
     }
 
     .theme-toggle {
@@ -554,7 +556,6 @@ main {
     }
 
     .info-table th {
-        width: 5.5rem;
         padding-inline-end: var(--space-sm);
     }
 }

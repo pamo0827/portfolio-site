@@ -51,9 +51,10 @@ typography:
     fontFeatures: "tabular-nums"
 
 layout:
-  measure: "56rem"
-  gutterStart: "clamp(1.5rem, 11vw, 12rem)"
-  gutterEnd: "1.5rem"
+  measure: "64rem"
+  colMeta: "7rem"
+  gutterStart: "clamp(1.25rem, 11vw, 10rem)"
+  gutterEnd: "2rem"
   space:
     3xs: "0.125rem"
     2xs: "0.25rem"
@@ -64,7 +65,6 @@ layout:
     xl: "2.5rem"
     2xl: "4rem"
     3xl: "6rem"
-    4xl: "9rem"
 
 shapes:
   rule: "1px solid {colors.light.rule}"
@@ -132,8 +132,12 @@ Inter / Roboto / Poppins などの LLM デフォルト書体は使わない。�
 
 ## Layout
 
-中央寄せをやめ、コンテンツを**左に寄せた非対称**にしている（`gutterStart` は最大 12rem、
-`gutterEnd` は 1.5rem 固定）。セクションの上下パディングも意図的に不均一。
+中央寄せをやめ、コンテンツを**左に寄せた非対称**にしている（`gutterStart` は最大 10rem、
+`gutterEnd` は 2rem 固定）。セクションの上下パディングも意図的に不均一。
+
+リストの左メタ列は全セクションで `colMeta`（7rem）を共有し、日付・アプリ名の左端と
+本文の左端が縦に揃う。索引としての規律はこの1本の縦ラインが支えているので、
+セクションごとに幅を変えない。
 
 リスト行は「左マージンに日付 / 右に本文」の 2 カラム。これは**本文レベルのメタラベル**であり、
 禁止されている「セクション見出しの横にラベルを置く」パターン（slop-test gate 54）ではない。
