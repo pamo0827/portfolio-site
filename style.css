@@ -152,7 +152,6 @@ main {
 }
 
 /* Numerals in the meta columns align vertically. */
-.hero__meta,
 .works__date,
 .article__date,
 .article__likes,
@@ -226,23 +225,6 @@ main {
 
 .hero {
     padding-block: var(--space-xl) var(--space-2xl);
-}
-
-/* 「ハンドルネーム Pam」— About の表と同じラベル＋値の書式 */
-.hero__meta {
-    display: flex;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: var(--space-xs) var(--space-sm);
-    font-size: var(--text-xs);
-    letter-spacing: 0.06em;
-    color: var(--color-ink);
-    margin-block-end: var(--space-sm);
-}
-
-.hero__meta-label {
-    color: var(--color-muted);
-    letter-spacing: 0.02em;
 }
 
 .hero__name {
