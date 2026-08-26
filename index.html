@@ -1,50 +1,76 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Watanabe Yoshikatsu</title>
+    <meta name="description" content="渡邉慶勝（Pam）のポートフォリオ。制作・登壇・執筆の記録。">
+    <meta name="theme-color" content="#f7f4f0">
     <meta property="og:title" content="Portfolio - Watanabe Yoshikatsu">
     <meta property="og:description" content="Portfolio of Watanabe Yoshikatsu">
     <meta property="og:type" content="website">
+
+    <!-- テーマを描画前に確定させてフラッシュを防ぐ。既定はライト。 -->
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('theme');
+                if (saved === 'dark' || saved === 'light') {
+                    document.documentElement.dataset.theme = saved;
+                }
+            } catch (e) { /* localStorage 不可の環境では既定のライトのまま */ }
+        })();
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@500;700&family=Noto+Sans+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <button type="button" class="theme-toggle" id="themeToggle" aria-label="ダークモードに切り替える">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+        </svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2.5v2M12 19.5v2M4.4 4.4l1.4 1.4M18.2 18.2l1.4 1.4M2.5 12h2M19.5 12h2M4.4 19.6l1.4-1.4M18.2 5.8l1.4-1.4"/>
+        </svg>
+    </button>
+
     <main>
         <!-- Hero -->
-        <section class="hero-section">
+        <section class="hero reveal" style="--i: 0">
             <div class="container">
-                <p class="hero-nickname">Pam</p>
-                <h1 class="hero-name">WATANABE<br>YOSHIKATSU</h1>
-                <div class="hero-social-links">
-                    <div class="hero-social-icons">
-                        <a href="https://twitter.com/Shiro3504" target="_blank" class="hero-social-link" title="X (Twitter)">
-                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                <p class="hero__meta">Pam</p>
+                <h1 class="hero__name">WATANABE<br>YOSHIKATSU<span class="mark">.</span></h1>
+                <p class="hero__lede">制作・登壇・執筆の記録。2025 &mdash; 2026。</p>
+                <div class="hero__links">
+                    <div class="hero__icons">
+                        <a href="https://twitter.com/Shiro3504" target="_blank" rel="noopener" class="hero__icon" aria-label="X (Twitter)">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                             </svg>
                         </a>
-                        <a href="https://github.com/pamo0827" target="_blank" class="hero-social-link" title="GitHub">
-                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                        <a href="https://github.com/pamo0827" target="_blank" rel="noopener" class="hero__icon" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                             </svg>
                         </a>
                     </div>
-                    <div class="hero-social-texts">
-                        <a href="https://note.com/fair_aster792" target="_blank" class="hero-social-link hero-social-text">Note</a>
-                        <a href="https://lapras.com/person" target="_blank" class="hero-social-link hero-social-text">LAPRAS</a>
-                        <a href="https://www.wantedly.com/id/yoshikatsu_watanabe0" target="_blank" class="hero-social-link hero-social-text">Wantedly</a>
+                    <div class="hero__texts">
+                        <a href="https://note.com/fair_aster792" target="_blank" rel="noopener" class="hero__text-link">Note</a>
+                        <a href="https://lapras.com/person" target="_blank" rel="noopener" class="hero__text-link">LAPRAS</a>
+                        <a href="https://www.wantedly.com/id/yoshikatsu_watanabe0" target="_blank" rel="noopener" class="hero__text-link">Wantedly</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- About -->
-        <section id="about" class="section">
+        <section id="about" class="section reveal" style="--i: 1">
             <div class="container">
-                <h2>About</h2>
+                <h2 class="section__title">About</h2>
                 <table class="info-table">
                     <tr>
                         <th>所属</th>
@@ -56,50 +82,50 @@
                     </tr>
                     <tr>
                         <th>研究室</th>
-                        <td><a href="https://www.softlab.cs.tsukuba.ac.jp/" target="_blank">ソフトウェアとセキュリティ研究室 ↗</a></td>
+                        <td><a href="https://www.softlab.cs.tsukuba.ac.jp/" target="_blank" rel="noopener">ソフトウェアとセキュリティ研究室 ↗</a></td>
                     </tr>
                 </table>
             </div>
         </section>
 
         <!-- Works -->
-        <section id="works" class="section">
+        <section id="works" class="section section--works reveal" style="--i: 2">
             <div class="container">
-                <h2>Works</h2>
-                <ul class="works-list">
+                <h2 class="section__title">Works</h2>
+                <ul class="index-list works-list">
                     <li>
-                        <span class="works-date">2026年1月</span>
+                        <span class="works__date">2026.01</span>
                         <div>
-                            <div class="works-title"><a href="https://www.enpit.jp" target="_blank">enPiT2025 優秀賞 ↗</a></div>
-                            <div class="works-desc">地域貢献を志す大学生とつくば市の中学校を結ぶ、部活動特化型求人サイト「ぶかつなぐ」を開発。</div>
+                            <div class="works__title"><a href="https://www.enpit.jp" target="_blank" rel="noopener">enPiT2025 優秀賞 ↗</a></div>
+                            <p class="works__desc">地域貢献を志す大学生とつくば市の中学校を結ぶ、部活動特化型求人サイト「ぶかつなぐ」を開発。</p>
                         </div>
                     </li>
                     <li>
-                        <span class="works-date">2026年1月</span>
+                        <span class="works__date">2026.01</span>
                         <div>
-                            <div class="works-title">Queue株式会社 受託開発</div>
-                            <div class="works-desc">複数のWebサービスの広告・掲載情報を一元管理する業務支援アプリにおいて、DBの Supabase 移行および関連機能の改修を担当。</div>
+                            <div class="works__title">Queue株式会社 受託開発</div>
+                            <p class="works__desc">複数のWebサービスの広告・掲載情報を一元管理する業務支援アプリにおいて、DBの Supabase 移行および関連機能の改修を担当。</p>
                         </div>
                     </li>
                     <li>
-                        <span class="works-date">2025年9月</span>
+                        <span class="works__date">2025.09</span>
                         <div>
-                            <div class="works-title"><a href="https://www.security-camp.or.jp/minicamp/yamanashi2025.html" target="_blank">セキュリティ・キャンプミニ2025山梨 ↗</a></div>
-                            <div class="works-desc">2日間の合宿形式でセキュリティ技術を習得。</div>
-                        </div>
-                     </li>
-                    <li>
-                        <span class="works-date">2025年8月</span>
-                        <div>
-                            <div class="works-title"><a href="https://note.com/fair_aster792/n/n8e8f98e3262f" target="_blank">セキュリティ・キャンプ全国大会2025 ↗</a></div>
-                            <div class="works-desc">専門コースB プロダクトセキュリティコースに参加。5日間の合宿形式でセキュリティ技術を習得。</div>
+                            <div class="works__title"><a href="https://www.security-camp.or.jp/minicamp/yamanashi2025.html" target="_blank" rel="noopener">セキュリティ・キャンプミニ2025山梨 ↗</a></div>
+                            <p class="works__desc">2日間の合宿形式でセキュリティ技術を習得。</p>
                         </div>
                     </li>
                     <li>
-                        <span class="works-date">2025年6月</span>
+                        <span class="works__date">2025.08</span>
                         <div>
-                            <div class="works-title"><a href="https://note.com/fair_aster792/n/nc544aac1dcf6" target="_blank">技育CAMPハッカソン 努力賞 ↗</a></div>
-                            <div class="works-desc">AI人狼ゲーム「AIdentity」を開発。フロントエンド開発およびリーダーとして当日発表を担当。</div>
+                            <div class="works__title"><a href="https://note.com/fair_aster792/n/n8e8f98e3262f" target="_blank" rel="noopener">セキュリティ・キャンプ全国大会2025 ↗</a></div>
+                            <p class="works__desc">専門コースB プロダクトセキュリティコースに参加。5日間の合宿形式でセキュリティ技術を習得。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="works__date">2025.06</span>
+                        <div>
+                            <div class="works__title"><a href="https://note.com/fair_aster792/n/nc544aac1dcf6" target="_blank" rel="noopener">技育CAMPハッカソン 努力賞 ↗</a></div>
+                            <p class="works__desc">AI人狼ゲーム「AIdentity」を開発。フロントエンド開発およびリーダーとして当日発表を担当。</p>
                         </div>
                     </li>
                 </ul>
@@ -107,47 +133,82 @@
         </section>
 
         <!-- Apps -->
-        <section id="apps" class="section">
+        <section id="apps" class="section section--apps reveal" style="--i: 3">
             <div class="container">
-                <h2>Apps</h2>
-                <ul class="apps-list">
+                <h2 class="section__title">Apps</h2>
+                <ul class="index-list apps-list">
                     <li>
-                        <a href="https://smipe-pamo.onrender.com/" target="_blank" class="app-name">SMIPE ↗</a>
-                        <span class="app-tech">Rails · Spotify API · Docker</span>
+                        <a href="https://smipe-pamo.onrender.com/" target="_blank" rel="noopener" class="app__name">SMIPE ↗</a>
+                        <span class="app__tech">Rails · Spotify API · Docker</span>
                     </li>
                 </ul>
             </div>
         </section>
 
         <!-- Articles -->
-        <section id="articles" class="section">
+        <section id="articles" class="section section--articles reveal" style="--i: 4">
             <div class="container">
-                <h2>Articles</h2>
-                <ul class="articles-list">
+                <h2 class="section__title">Articles</h2>
+                <ul class="index-list articles-list">
                     <li>
-                        <span class="article-date-col">2026年2月1日</span>
-                        <span><a href="https://note.com/fair_aster792/n/n87f32194468f" target="_blank">「アジャイル開発」の本質を知る 〜enPiT2025参加レポート</a><span class="article-likes-col">♡ 8</span></span>
+                        <span class="article__date">2026.02.01</span>
+                        <span class="article__body"><a href="https://note.com/fair_aster792/n/n87f32194468f" target="_blank" rel="noopener">「アジャイル開発」の本質を知る 〜enPiT2025参加レポート</a><span class="article__likes">♡ 8</span></span>
                     </li>
                     <li>
-                        <span class="article-date-col">2025年10月18日</span>
-                        <span><a href="https://note.com/fair_aster792/n/na8397d3f7e8d" target="_blank">【iOS26対応】ソシャゲに自動でログインしよう</a><span class="article-likes-col">♡ 15</span></span>
+                        <span class="article__date">2025.10.18</span>
+                        <span class="article__body"><a href="https://note.com/fair_aster792/n/na8397d3f7e8d" target="_blank" rel="noopener">【iOS26対応】ソシャゲに自動でログインしよう</a><span class="article__likes">♡ 15</span></span>
                     </li>
                     <li>
-                        <span class="article-date-col">2025年9月29日</span>
-                        <span><a href="https://note.com/fair_aster792/n/n96af1dda80a6" target="_blank">【課題晒し】セキュリティキャンプ2025全国大会</a><span class="article-likes-col">♡ 8</span></span>
+                        <span class="article__date">2025.09.29</span>
+                        <span class="article__body"><a href="https://note.com/fair_aster792/n/n96af1dda80a6" target="_blank" rel="noopener">【課題晒し】セキュリティキャンプ2025全国大会</a><span class="article__likes">♡ 8</span></span>
                     </li>
                     <li>
-                        <span class="article-date-col">2025年8月16日</span>
-                        <span><a href="https://note.com/fair_aster792/n/n8e8f98e3262f" target="_blank">【セキュリティキャンプ2025全国大会】人生が変わった５日間</a><span class="article-likes-col">♡ 13</span></span>
+                        <span class="article__date">2025.08.16</span>
+                        <span class="article__body"><a href="https://note.com/fair_aster792/n/n8e8f98e3262f" target="_blank" rel="noopener">【セキュリティキャンプ2025全国大会】人生が変わった５日間</a><span class="article__likes">♡ 13</span></span>
                     </li>
                     <li>
-                        <span class="article-date-col">2025年8月1日</span>
-                        <span><a href="https://note.com/fair_aster792/n/nc544aac1dcf6" target="_blank">技育CAMPハッカソン参加レポート：自分の無知に気付かされる２週間</a><span class="article-likes-col">♡ 5</span></span>
+                        <span class="article__date">2025.08.01</span>
+                        <span class="article__body"><a href="https://note.com/fair_aster792/n/nc544aac1dcf6" target="_blank" rel="noopener">技育CAMPハッカソン参加レポート：自分の無知に気付かされる２週間</a><span class="article__likes">♡ 5</span></span>
                     </li>
                 </ul>
             </div>
         </section>
+
+        <footer class="reveal" style="--i: 5">
+            <div class="container">
+                <p class="colophon">
+                    <span>© 2026 Watanabe Yoshikatsu</span>
+                    <span>Built by hand</span>
+                </p>
+            </div>
+        </footer>
     </main>
 
+    <script>
+        (function () {
+            var root = document.documentElement;
+            var toggle = document.getElementById('themeToggle');
+            var LIGHT_BG = '#f7f4f0';
+            var DARK_BG = '#1c1917';
+
+            function sync() {
+                var isDark = root.dataset.theme === 'dark';
+                toggle.setAttribute('aria-label', isDark ? 'ライトモードに切り替える' : 'ダークモードに切り替える');
+                var meta = document.querySelector('meta[name="theme-color"]');
+                if (meta) meta.setAttribute('content', isDark ? DARK_BG : LIGHT_BG);
+            }
+
+            toggle.addEventListener('click', function () {
+                var next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+                root.dataset.theme = next;
+                try { localStorage.setItem('theme', next); } catch (e) { /* 保存できなくても切り替えは効く */ }
+                sync();
+            });
+
+            sync();
+        })();
+    </script>
+
+    <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "cd3036842a564dad9a7fe26f033d4a58"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
