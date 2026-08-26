@@ -227,15 +227,24 @@ main {
    ============================================================ */
 
 .hero {
-    padding-block: var(--space-2xl) var(--space-3xl);
+    padding-block: var(--space-xl) var(--space-2xl);
 }
 
+/* 「ハンドルネーム Pam」— About の表と同じラベル＋値の書式 */
 .hero__meta {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: var(--space-xs) var(--space-sm);
     font-size: var(--text-xs);
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    color: var(--color-muted);
+    letter-spacing: 0.06em;
+    color: var(--color-ink);
     margin-block-end: var(--space-sm);
+}
+
+.hero__meta-label {
+    color: var(--color-muted);
+    letter-spacing: 0.02em;
 }
 
 .hero__name {
@@ -247,20 +256,13 @@ main {
     letter-spacing: -0.035em;
     overflow-wrap: anywhere;
     min-width: 0;
-    margin-block-end: var(--space-md);
+    margin-block-end: var(--space-lg);
 }
 
 .hero__name .mark {
     color: var(--color-accent);
 }
 
-.hero__lede {
-    font-size: var(--text-lg);
-    color: var(--color-muted);
-    max-width: 48ch;
-    line-height: var(--lh-tight);
-    margin-block-end: var(--space-lg);
-}
 
 .hero__links {
     display: flex;
