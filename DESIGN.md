@@ -64,7 +64,6 @@ layout:
     lg: "1.5rem"
     xl: "2.5rem"
     2xl: "4rem"
-    3xl: "6rem"
 
 shapes:
   rule: "1px solid {colors.light.rule}"

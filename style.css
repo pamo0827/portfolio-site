@@ -26,7 +26,6 @@
     --text-xs:  0.75rem;
     --text-sm:  0.8125rem;
     --text-md:  0.9375rem;
-    --text-lg:  1.0625rem;
     --text-display: clamp(2.1rem, 6.4vw, 3.9rem);
 
     --lh-display: 1.04;
@@ -42,7 +41,6 @@
     --space-lg:  1.5rem;
     --space-xl:  2.5rem;
     --space-2xl: 4rem;
-    --space-3xl: 6rem;
 
     /* Motion */
     --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -408,15 +406,14 @@ main {
 
 .works-list > li {
     grid-template-columns: var(--col-meta) minmax(0, 1fr);
-    align-items: start;
-    padding-block: var(--space-md);
+    align-items: baseline;
+    padding-block: var(--space-sm);
 }
 
 .works__date {
     font-size: var(--text-xs);
     color: var(--color-muted);
     white-space: nowrap;
-    padding-block-start: 0.2em;
 }
 
 .works__title {
@@ -425,13 +422,6 @@ main {
     line-height: var(--lh-tight);
 }
 
-.works__desc {
-    font-size: var(--text-sm);
-    color: var(--color-muted);
-    line-height: 1.65;
-    max-width: 62ch;
-    margin-block-start: var(--space-3xs);
-}
 
 .apps-list > li {
     grid-template-columns: var(--col-meta) minmax(0, 1fr);
@@ -551,10 +541,6 @@ main {
     .articles-list > li {
         grid-template-columns: minmax(0, 1fr);
         gap: var(--space-3xs);
-    }
-
-    .works__date {
-        padding-block-start: 0;
     }
 
     .info-table th {
